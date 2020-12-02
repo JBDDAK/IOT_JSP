@@ -26,7 +26,7 @@
 				out.print("<tr>");
 				out.print("<td>"+ rs.getString(1) + "</td>");
 				out.print("<td>"+ rs.getString(2) + "</td>");
-				out.print("<td>"+ rs.getString(3) + "</td>");
+				out.print("<td>"+ rs.getInt(3) + "</td>");
 				out.print("</tr>");
 		}
 		stmt.close();
