@@ -31,7 +31,9 @@
 			"WHERE "+ 
 				"SALELIST.SCODE = SHOP.SCODE "+ 
 			"AND "+ 
-				"SALELIST.PCODE = PIZZA.PCODE";
+				"SALELIST.PCODE = PIZZA.PCODE "+
+			"ORDER BY "+
+				"SALELIST.SALENO";
 		ResultSet rs = stmt.executeQuery(query);
 		while (rs.next()) {
 				out.print("<tr>");
