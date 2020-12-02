@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/css.css">
 <title>이정훈</title>
 </head>
 <%
