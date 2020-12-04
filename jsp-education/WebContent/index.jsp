@@ -28,6 +28,9 @@ String section = request.getParameter("section") != null ? request.getParameter(
 	case "select_sales_shop":
 		%><%@include file="page/select_sales_shop.jsp" %><%
 		break;
+	case "select_sales_by_pizza":
+		%><%@include file="page/select_sales_by_pizza.jsp" %><%
+		break;
 	default:
 		%><%@include file="static/index.jsp" %><%
 	}
