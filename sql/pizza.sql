@@ -133,3 +133,17 @@ INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'1', '20200122', '1000000','1');
 INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'4', '20200124', '80000','1');
 INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'5', '20200126', '210000','1');
 INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'6', '20200129', '160000','1');
+
+SELECT SALE.SALE_ID, PRODUCT.NAME, sale.purchase_date,SALE.AMOUNT * product.price, SALE.AMOUNT FROM SALE, PRODUCT 
+WHERE sale.product_id = product.product_id
+
+SELECT PRODUCT.NAME, SUM(SALE.AMOUNT * product.price), SUM(SALE.AMOUNT) FROM SALE, PRODUCT 
+WHERE sale.product_id = product.product_id
+GROUP BY product.product_id, PRODUCT.NAME
+
+SELECT category.name, SUM(sale.sale_price) ,SUM(SALE.AMOUNT)
+FROM SALE, PRODUCT, CATEGORY
+WHERE category.category_id = product.category_id
+AND product.product_id = sale.product_id
+GROUP BY category.name, category.category_id
+ORDER BY category.category_id
