@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <h3>INSERT</h3>
 <script>
+
+
     function reset_form() {
         document.input_form.reset();
     }
@@ -22,7 +24,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit" value="등록하기">
+                <input type="button" value="등록하기">
                 <input type="button" value="다시쓰기" onclick="reset_form()">
             </td>
         </tr>

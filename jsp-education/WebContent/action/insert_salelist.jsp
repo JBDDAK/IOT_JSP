@@ -31,5 +31,5 @@ catch (Exception e) {
 	e.printStackTrace();
 }
 
-response.sendRedirect("../index.jsp");
+response.sendRedirect("../index.jsp?section=select_sales");
 %>
