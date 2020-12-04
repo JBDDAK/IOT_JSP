@@ -3,9 +3,9 @@
 <%@ page import="java.sql.*" %>
 <%
 request.setCharacterEncoding("UTF-8");
-String pizza_code = request.getParameter("pizza_code");
-String pizza_name = request.getParameter("pizza_name");
-int cost = Integer.parseInt(request.getParameter("cost"));
+
+String scode = request.getParameter("scode");
+String sname = request.getParameter("sname");
 
 try {
 	Class.forName("oracle.jdbc.OracleDriver");
@@ -13,9 +13,11 @@ try {
 	("jdbc:oracle:thin:@//122.128.169.32:1521/xe", "sdh_18", "1234");
 
 	Statement stmt = conn.createStatement();
-	String query = "INSERT INTO TBL_PIZZA_01(PCODE, PNAME, COST) VALUES('%s', '%s', %d)";
-	//out.print(String.format(query, pizza_code, pizza_name, cost));
-	ResultSet rs = stmt.executeQuery(String.format(query, pizza_code, pizza_name, cost));
+	
+	String query = "INSERT INTO TBL_SHOP_01(SCODE, SNAME) VALUES('%s', '%s')";
+	
+	//out.print(String.format(query, sale_code, scode, sale_date, pcode, sale_amount));
+	ResultSet rs = stmt.executeQuery(String.format(query, scode, sname));
 	
 	conn.commit();
 	

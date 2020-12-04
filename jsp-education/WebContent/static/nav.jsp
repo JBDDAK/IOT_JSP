@@ -3,6 +3,8 @@
 <nav>
 	<ul>
 		<li><a href="index.jsp?section=insert">INSERT</a></li>
+		<li><a href="index.jsp?section=insert_sales">INSERT_SALES</a></li>
+		<li><a href="index.jsp?section=insert_shop">INSERT_SHOP</a></li>
 		<li><a href="index.jsp?section=select">SELECT</a></li>
 		<li><a href="index.jsp?section=select_sales">SELECT_SALES</a></li>
 		<li><a href="index.jsp?section=select_sales_shop">SELECT_SALES_SHOP</a></li>
