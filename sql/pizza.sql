@@ -69,3 +69,67 @@ FROM tbl_pizza_01 PIZZA, tbl_salelist_01 SALELIST
 WHERE SALELIST.PCODE = PIZZA.PCODE
 GROUP BY PIZZA.PNAME
 ORDER BY TOTAL_COST DESC
+
+-- 
+CREATE TABLE product (
+    product_id  number(10) NOT NULL PRIMARY KEY,
+    name varchar2(40),
+    price number(10),
+    category_id number(10) NOT NULL
+);
+
+CREATE TABLE category (
+    category_id number(10) NOT NULL PRIMARY KEY,
+    name varchar2(20)
+);
+
+CREATE TABLE sale (
+    sale_id number(10) NOT NULL PRIMARY KEY,
+    product_id number(10) NOT NULL,
+    purchase_date date,
+    sale_price number(10) NOT NULL,
+    amount number(5) NOT NULL
+);
+
+CREATE SEQUENCE product_SEQ
+INCREMENT BY 1
+START WITH 1;
+
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'컴퓨터','1000000','1');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'태블릿 PC','800000','1');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'핸드폰','1200000','1');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'헤드셋','80000','1');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'무선 이어폰','210000','1');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'책상','160000','2');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'의자','90000','2');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'소고기','12000','3');
+INSERT INTO product VALUES(product_SEQ.NEXTVAL,'티셔츠','58000','4');
+
+CREATE SEQUENCE category_SEQ
+INCREMENT BY 1
+START WITH 1;
+
+INSERT INTO category VALUES(category_SEQ.NEXTVAL,'전자제품');
+INSERT INTO category VALUES(category_SEQ.NEXTVAL,'가구');
+INSERT INTO category VALUES(category_SEQ.NEXTVAL,'식품');
+INSERT INTO category VALUES(category_SEQ.NEXTVAL,'의류');
+
+CREATE SEQUENCE sale_SEQ
+INCREMENT BY 1
+START WITH 1;
+
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'1', '20200101', '1000000','1');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'2', '20200101', '1600000','2');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'1', '20200101', '2000000','2');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'4', '20200102', '240000','3');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'5', '20200104', '210000','1');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'6', '20200106', '320000','2');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'7', '20200111', '360000','4');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'8', '20200115', '60000','5');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'9', '20200117', '58000','1');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'9', '20200120', '580000','10');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'2', '20200121', '1600000','2');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'1', '20200122', '1000000','1');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'4', '20200124', '80000','1');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'5', '20200126', '210000','1');
+INSERT INTO sale VALUES(sale_SEQ.NEXTVAL,'6', '20200129', '160000','1');
