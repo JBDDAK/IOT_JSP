@@ -24,13 +24,13 @@
         <tr>
             <td> 판매한 상품 </td>
             <td>
-            	<select name="pro_name">
+            	<select name="pro_id">
 					<%
 						Statement stmt_shop = conn.createStatement();
 						ResultSet rs_shop = stmt_shop.executeQuery("SELECT product_id, name FROM product");
 						while (rs_shop.next()) {
 							%>
-								<option value="<%=rs_shop.getString(2) %>"><%=rs_shop.getString(2) %></option>
+								<option value="<%=rs_shop.getString(1) %>"><%=rs_shop.getString(2) %></option>
 							<%
 						}
 					%>
