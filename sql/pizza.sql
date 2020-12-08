@@ -147,3 +147,11 @@ WHERE category.category_id = product.category_id
 AND product.product_id = sale.product_id
 GROUP BY category.name, category.category_id
 ORDER BY category.category_id
+
+SELECT product.product_id FROM PRODUCT
+WHERE product.name = '태블릿 PC'
+GROUP BY product.product_id
+
+SELECT product.price FROM PRODUCT
+WHERE product.name = '태블릿 PC'
+GROUP BY product.price

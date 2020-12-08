@@ -5,13 +5,13 @@
 	try {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection conn = DriverManager.getConnection
-			("jdbc:oracle:thin:@//122.128.169.32:1521/xe", "sdh_18", "1234");
+				("jdbc:oracle:thin:@//localhost/xe", "system", "1234");
 %>
 
 <script>
 	function submit_form() {
 		alert("정상적으로 처리되었습니다.")
-		//document.input_form.submit();
+		document.input_form.submit();
     }
 
 	function reset_form() {
@@ -19,7 +19,7 @@
 	}
 </script>
 <h3>판매등록</h3>
-<form action="action/insert_data.jsp" method="post" name="input_form">
+<form action="action/insert_sale_action.jsp" method="post" name="input_form">
     <table border="1">
         <tr>
             <td> 판매한 상품 </td>
@@ -30,7 +30,7 @@
 						ResultSet rs_shop = stmt_shop.executeQuery("SELECT product_id, name FROM product");
 						while (rs_shop.next()) {
 							%>
-								<option value="<%=rs_shop.getString(1) %>"><%=rs_shop.getString(2) %></option>
+								<option value="<%=rs_shop.getString(2) %>"><%=rs_shop.getString(2) %></option>
 							<%
 						}
 					%>
@@ -43,7 +43,7 @@
         </tr>
         <tr>
             <td> 판매날짜 </td>
-            <td><input type="text" name="date"></td>
+            <td><input type="date" name="date"></td>
         </tr>
         <tr>
             <td colspan="2">
